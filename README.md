@@ -18,7 +18,6 @@ Here’s the most important caution: I suspect that **good technology doesn’t 
 
 
 # First Questions
-
 * Synchronous vs. asynchronous
 * Presentation vs. interaction
 
@@ -26,11 +25,9 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 ## Software
 
-
 # Basics
 
 ## Microphones
-
 * Cardioid vs. omnidirectional
 * Condenser vs. dynamic
 * USB vs. XLR
@@ -38,18 +35,13 @@ Implications for meeting, streaming, recording; bandwidth, latency
 * Mic technique
 * Room treatment
 
-
 ## Headphones/speakers
-
 
 ## Cameras
 
-
 ## Monitors
 
-
 ## Desk arrangement
-
 
 # Intermediate Topics
 
@@ -58,6 +50,7 @@ Implications for meeting, streaming, recording; bandwidth, latency
 ## Boarding
 
 ## Intermediate video
+
 ## Backgrounds
 * Real backgrounds
 * Virtual backgrounds
@@ -70,16 +63,21 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 
 # Advanced Topics
+
 ## Recording
 * Video
   * Conversion incl. Handbrake
 * Multitrack audio
 
 ## Advanced video
+
 ### Switching
+
 ### Compositing
+
 ### Keying
 * Greenscreens
+
 ### Bumpers, titles, captions
 
 ## Multichannel
