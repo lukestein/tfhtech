@@ -8,7 +8,7 @@ Four quick caveats; three are quick and numbered, while the last one is most imp
 3. This page includes affiliate links which—if you click on them and make purchases—earn me a little bit of money. No one’s (yet) offered me any discounted products or sponsorships of any kind, but I acknowledge the risk that these affiliate risks affect my incentives to recommend expensive products. Offsetting that, I am a cheapskate who has bought most of this stuff, and bought all of that out of my own pocket (usually unreimbursed by college funds). *Caveat emptor.*
 
 Here’s the most important caution: I suspect that **good technology doesn’t mean good teaching**, whatever “good” teaching even means. (And whatever it means, the best teachers are probably more focused on learning than teaching, anyway.) This page is about teaching *technology* not because technology is so important, but because I believe it‘s important *enough* to be worth thinking about. As I mentioned above, I‘m not an expert, but here are some reasons I think you should consider improving your teaching technology:
-##### Direct effects
+* Direct effects
 1. Student engagement
 2. Student understanding
 3. Credibility
