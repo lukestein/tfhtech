@@ -35,9 +35,15 @@ Implications for meeting, streaming, recording; bandwidth, latency
 * Mic technique
 * Room treatment
 
+> Recommendation: Samson Q2U (Not currently available)
+
+
 ## Headphones/speakers
 
 ## Cameras
+
+> Recommendation: [Razer Kiyo](https://amzn.to/39Jna9l), [Razer Kiyo (alt)](https://amzn.to/3oiRYBS)
+
 
 ## Monitors
 
