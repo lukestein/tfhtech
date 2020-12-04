@@ -70,12 +70,26 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 # Advanced Topics
 
+## Multiple PCs
+
+
 ## Recording
 * Video
   * Conversion incl. Handbrake
 * Multitrack audio
 
+## Advanced audio
+
+* Noise and other filters
+* Desktop audio capture
+
 ## Advanced video
+
+# Capture cards
+
+# NDI
+
+* Skype
 
 ### Switching
 
@@ -83,6 +97,7 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 ### Keying
 * Greenscreens
+* Masks
 
 ### Bumpers, titles, captions
 
@@ -90,3 +105,9 @@ Implications for meeting, streaming, recording; bandwidth, latency
 * Youtube Live, Periscope, Twitch
 * Youtube, Twitter, LMS uploads
 * Restream
+
+## Teleprompters
+
+## Guest speakers
+
+## iOS and Airplay
