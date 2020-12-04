@@ -85,9 +85,9 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 ## Advanced video
 
-# Capture cards
+### Capture cards
 
-# NDI
+### NDI
 
 * Skype
 
