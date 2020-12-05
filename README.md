@@ -108,6 +108,12 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 ## Teleprompters
 
+## Controllers
+* Streamdeck
+* MIDI?
+
+## Polling software
+
 ## Guest speakers
 
 ## iOS and Airplay
