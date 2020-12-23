@@ -117,3 +117,10 @@ Implications for meeting, streaming, recording; bandwidth, latency
 ## Guest speakers
 
 ## iOS and Airplay
+
+
+# Other tools
+* Flipgrid
+* Icebreaker Video
+* Mentimeter
+* Notability
