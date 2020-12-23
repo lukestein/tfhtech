@@ -1,4 +1,4 @@
-**This page remains (for now) just an outline, but feel free to check out [a more fleshed list of some gear recommendations](https://kit.co/lukestein/teach-from-home-technology).**
+**This page remains (for now) just an outline, but feel free to check out [a more fleshed-out list of some gear recommendations](https://kit.co/lukestein/teach-from-home-technology).**
 
 This is a page to collect some of my thoughts and recommendations about techology you can use to teach from home. By “teach,” I mean both teaching students enrolled in a class, and presenting to participants in a research seminar. Those are my focus only because in my job I teach college students and present research, but hopefully some of this is useful for other purposes too—like online meetings and socializing.
 
@@ -24,9 +24,9 @@ Here’s the most important caution: I suspect that **good technology doesn’t 
 
 Implications for meeting, streaming, recording; bandwidth, latency
 
-## Software
-
 # Basics
+
+## Software
 
 ## Microphones
 * Cardioid vs. omnidirectional
