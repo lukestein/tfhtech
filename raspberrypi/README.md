@@ -122,15 +122,23 @@ If you choose "Autorun after start" (and then save), the Pi will boot directly i
 
 [Homepage](https://obs.ninja)
 
-We need to set a few Chromium flags to ensure the pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the folling options:
+We need to set a few Chromium flags to ensure the pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the following options:
 * `chrome://flags/#ignore-gpu-blocklist`
 * `chrome://flags/#enable-accelerated-video-decode`
 * `chrome://flags/#enable-gpu-rasterization`
 
-You can check that the GPU is enabled by browsing to `chrome://gpu`
+Restart the browser. You can check hardware acceleration status by browsing to `chrome://gpu`
 
+As a simple example, direct guests to join an OBSN room at e.g., <https://obs.ninja/?room=ROOMNAME&pw=ROOMPASSWORD> or obfuscate the password using <https://invite.cam>. You can control this "room" (including sending audio/video to your guest that will not be captured by the Pi) at <https://obs.ninja/?director=ROOMNAME&pw=ROOMPASSWORD>.
+
+Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen OBS viewer remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required \"https://obs.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720\""
 ```
-chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required "https://obs.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720&stats"
+
+You can close this browser window remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "pkill -o chromium"
 ```
 
 ## Video players
