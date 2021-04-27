@@ -26,7 +26,7 @@
 
 [Homepage](https://aaronparecki.com/2020/09/07/7/raspberry-pi-streaming-server)
 
-In terminal, run
+In terminal, run:
 ```bash
 sudo apt update
 sudo apt install omxplayer nginx libnginx-mod-rtmp
@@ -35,7 +35,7 @@ sudo usermod -aG video www-data
 
 Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can disable nginx's web server on port 80 so that other apps (e.g, Dicaffeine) can use port 80 instead.
 
-To create an RTMP server in nginx, edit the main nginx config file
+To create an RTMP server in nginx, edit the main nginx config file:
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
@@ -63,24 +63,34 @@ rtmp {
 }
 ```
 
-Test the config using
+Test the config using:
 ```bash
 sudo nginx -t
 ```
-and restart nginx using
+and restart nginx using:
 ```bash
 sudo nginx -s reload
 ```
 
 Ensure you know your local IP address (which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://YOUR_IP_ADDRESS/live` with any stream key.
 
-Note that the cursor will show on top of streamed video. (This is not true if you are using a terminal-only Pi as suggested in Aaron Parecki's original instructions.) We can hide the cursor when it's not moving using the `unclutter` package
+Note that by default the cursor will show on top of streamed video. (This would not be true if you were using a terminal-only Pi as suggested in Aaron Parecki's original instructions.) We can hide the cursor when it's not moving using the `unclutter` package:
 ```bash
 sudo apt install unclutter
 sudo service lightdm restart
 ```
 
-Change nginx's default webserver from port 80 to another port (e.g., 8080) using `sudo nano /etc/nginx/sites-available/default` and changing the two "listen" lines under `server {` from "80" to "8080". Test the config using `sudo nginx -t` and restart nginx using `sudo nginx -s reload`
+Change nginx's default webserver from port 80 to another port (e.g., 8080) using
+```bash
+sudo nano /etc/nginx/sites-available/default
+```
+and changing the two "listen" lines under `server {` from "80" to "8080". Test the config using
+```bash
+sudo nginx -t
+```
+and restart nginx using
+```bash
+sudo nginx -s reload```
 
 
 
@@ -111,6 +121,16 @@ If you choose "Autorun after start" (and then save), the Pi will boot directly i
 
 [Homepage](https://obs.ninja)
 
+We need to set a few Chromium flags to ensure the pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the folling options:
+* `chrome://flags/#ignore-gpu-blocklist`
+* `chrome://flags/#enable-accelerated-video-decode`
+* `chrome://flags/#enable-gpu-rasterization`
+
+You can check that the GPU is enabled by browsing to `chrome://gpu`
+
+```
+chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required "https://obs.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720&stats"
+```
 
 ## Video players
 
