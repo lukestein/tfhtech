@@ -186,7 +186,10 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 
 [Homepage](https://gitlab.com/Depili/clock-8001)
 
+*To be added*
 
 ## Bitfocus Companion control
 
 [Homepage](https://bitfocus.io/companion)
+
+*To be added*
