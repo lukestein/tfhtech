@@ -15,6 +15,7 @@
 7. Open the Terminal application from the menubar. Run `sudo raspi-config`. Set the following:
   - System Options S2 (Audio): **HDMI 1**
   - System Options S4 (Hostname): As desired
+  - Display Options D1 (Resolution): As desired (I get decent performance with 1920x1080 30Hz)
   - Advanced Options A1 (Expand Filesystem): Select
   - Advanced Options A2 (GL Driver): **G2 GL**
   - Advanced Options A3 (Compositor): **No**
@@ -145,8 +146,38 @@ ssh pi@192.168.0.140 "pkill -o chromium"
 
 ### VLC
 
+VLC is installed by default, but you can confirm by running:
+```bash
+sudo apt install vlc
+```
+
+Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen VLC player remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "cvlc --one-instance -I http --http-port 8080 --http-password testpassword --no-xlib --aout=alsa --no-video-title --repeat /opt/vc/src/hello_pi/hello_video/test.h264"
+```
+
+You can close this player remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "cvlc --one-instance --no-xlib --aout=adummy vlc://quit"
+```
 
 ### omxplayer
+
+omxplayer is installed by default, but you can confirm by running:
+```bash
+sudo apt install omxplayer
+```
+
+Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen omxplayer player remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "omxplayer --loop /opt/vc/src/hello_pi/hello_video/test.h264"
+```
+
+You can close this player remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "pkill omxplayer"
+```
+
 
 
 ## Other utilities
