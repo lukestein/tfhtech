@@ -16,6 +16,7 @@
   - System Options S2 (Audio): **HDMI 1**
   - System Options S4 (Hostname): As desired
   - Display Options D1 (Resolution): As desired (I get decent performance with 1920x1080 30Hz)
+  - Display Options D4 (Screen Blanking): **No**
   - Advanced Options A1 (Expand Filesystem): Select
   - Advanced Options A2 (GL Driver): **G2 GL**
   - Advanced Options A3 (Compositor): **No**
@@ -114,7 +115,7 @@ The default password for Dicaffeine is `admin`; you can change this using the "S
 
 On the "Player" tab, choose an NDI source under Main stream, and select "Built-in Audio Digital Stereo" under Audio. "Low resolution" is suggested (or use the Advanced properties); Dicaffeine does not seem able to handle e.g. 1080p30. Click "Save" to save setting, and then "Play."
 
-Exit the player by clicking "Stop" if controlling from a remote computer, or bu right-clicking the Pi's mouse.
+Exit the player by clicking "Stop" if controlling from a remote computer, or by right-clicking the Pi's mouse.
 
 If you choose "Autorun after start" (and then save), the Pi will boot directly into a running Dicaffeine player rather than the desktop environment.
 
@@ -170,7 +171,7 @@ sudo apt install omxplayer
 
 Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen omxplayer player remotely via SSH using e.g.,
 ```bash
-ssh pi@192.168.0.140 "omxplayer --loop /opt/vc/src/hello_pi/hello_video/test.h264"
+ssh pi@192.168.0.140 "omxplayer --loop /home/pi/media/fallingstars_1080p.mp4"
 ```
 
 You can close this player remotely via SSH using e.g.,
