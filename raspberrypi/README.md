@@ -90,7 +90,8 @@ sudo nginx -t
 ```
 and restart nginx using
 ```bash
-sudo nginx -s reload```
+sudo nginx -s reload
+```
 
 
 
