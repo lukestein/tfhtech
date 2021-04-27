@@ -32,9 +32,14 @@ sudo apt update
 sudo apt install omxplayer nginx libnginx-mod-rtmp
 sudo usermod -aG video www-data
 ```
-Note that nginx will fail to set up if it cannot control port 80 for its webserver, although once set up, we can disable nginx's web server on port 80 so that other apps (e.g, Dicaffeine) can use port 80 instead.
 
-To create an RTMP server in nginx, edit the main nginx config file `sudo nano /etc/nginx/nginx.conf` adding at the bottom (and savings your changes):
+Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can disable nginx's web server on port 80 so that other apps (e.g, Dicaffeine) can use port 80 instead.
+
+To create an RTMP server in nginx, edit the main nginx config file
+```bash
+sudo nano /etc/nginx/nginx.conf
+```
+adding at the bottom (and savings your changes):
 ```
 rtmp {
   server {
@@ -58,7 +63,14 @@ rtmp {
 }
 ```
 
-Test the config using `sudo nginx -t` and restart nginx using `sudo nginx -s reload`
+Test the config using
+```bash
+sudo nginx -t
+```
+and restart nginx using
+```bash
+sudo nginx -s reload
+```
 
 Ensure you know your local IP address (which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://YOUR_IP_ADDRESS/live` with any stream key.
 
