@@ -82,11 +82,18 @@ sudo apt install unclutter
 sudo service lightdm restart
 ```
 
-Change nginx's default webserver from port 80 to another port (e.g., 8080) using
+Change nginx's default webserver from port 80 to another port using
 ```bash
 sudo nano /etc/nginx/sites-available/default
 ```
-and changing the two "listen" lines under `server {` from "80" to "8080". Test the config using
+and changing the two "listen" lines under `server {` from "80" to e.g., "81".
+```
+server {
+        listen 81 default_server;
+        listen [::]:81 default_server;
+```
+
+Test the config using
 ```bash
 sudo nginx -t
 ```
