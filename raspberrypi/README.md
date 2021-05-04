@@ -171,7 +171,7 @@ Ensure you know your local IP address (e.g., 192.168.0.140, which you can check 
 ssh pi@192.168.0.140 "cvlc --one-instance -I http --http-port 8080 --http-password testpassword --no-xlib --aout=alsa --no-video-title --repeat /opt/vc/src/hello_pi/hello_video/test.h264"
 ```
 
-The `one-instance` flag helps ensure that any subsequent commands run in the same VLC instance. [https://wiki.videolan.org/VLC_command-line_help](Many command line flags) are available.
+The `one-instance` flag helps ensure that any subsequent commands run in the same VLC instance. [Many command line flags](https://wiki.videolan.org/VLC_command-line_help) are available.
 
 
 You can close this player by asking it to "play" `vlc://quit`, or remotely via SSH using e.g.,
