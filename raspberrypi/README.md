@@ -5,7 +5,7 @@ My goal is to set up a single Raspberry Pi 4 to receive/play video out to HDMI f
 ## Basic setup
 
 1. Use Raspberry Pi Imager to install Raspberry Pi OS (default) on a MicroSD card.
-2. Insert the MicroSD card into the Pi, and attach a keyboard/mouse (via USB) and a display (via HDMI using the Micro HDMI port closer to the Micro USB power port). Power up the Pi using a high-quality power supply to the Micro USB power port.
+2. Insert the MicroSD card into the Pi, and attach a keyboard/mouse (via USB) and a display (using the Micro HDMI port closer to the Micro USB power port). Power up the Pi using a high-quality power supply to the Micro USB power port.
 3. As prompted by the GUI, set
   - location settings
   - password
@@ -44,7 +44,7 @@ sudo usermod -aG video www-data
 
 Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can change nginx's web server to a different port so that other apps (e.g, Dicaffeine) can use port 80 instead.
 
-To create an RTMP server in nginx, edit the main nginx config file `/etc/nginx/nginx.conf` using e.g.,
+To create an RTMP server, edit the main nginx config file `/etc/nginx/nginx.conf` using e.g.,
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
@@ -93,7 +93,7 @@ If you wish to change nginx's default webserver from port 80 to another port (e.
 ```bash
 sudo nano /etc/nginx/sites-available/default
 ```
-and change the two "listen" lines under `server {` from "80" to any unused port, e.g., "81":
+and change the two "listen" lines under `server {` from "80" to any unused port (e.g., "81"):
 ```
 server {
         listen 81 default_server;
@@ -123,7 +123,7 @@ sudo apt update
 sudo apt install -y dicaffeine
 ```
 
-Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). Open dicaffeine at that IP using either the Pi's web browser, or another computer on the local network that can access the Pi.
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). Open Dicaffeine at that IP using either the Pi's web browser, or another computer on the local network that can access the Pi.
 
 The default password for Dicaffeine is `admin`; you can change this using the "System" tab at the top of the browser window.
 
@@ -138,7 +138,7 @@ If you choose "Autorun after start" (and then save), the Pi will boot directly i
 
 [Homepage](https://obs.ninja)
 
-We need to set a few Chromium flags to ensure the pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the following options:
+We need to set a few Chromium flags to ensure the Pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the following options:
 * `chrome://flags/#ignore-gpu-blocklist`
 * `chrome://flags/#enable-accelerated-video-decode`
 * `chrome://flags/#enable-gpu-rasterization`
