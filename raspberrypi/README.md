@@ -89,11 +89,11 @@ sudo apt install unclutter
 sudo service lightdm restart
 ```
 
-Change nginx's default webserver from port 80 to another port using
+If you wish to change nginx's default webserver from port 80 to another port (e.g., so that we can install Dicaffeine), edit `/etc/nginx/sites-available/default` using e.g.,
 ```bash
 sudo nano /etc/nginx/sites-available/default
 ```
-and changing the two "listen" lines under `server {` from "80" to e.g., "81".
+and change the two "listen" lines under `server {` from "80" to any unused port, e.g., "81":
 ```
 server {
         listen 81 default_server;
