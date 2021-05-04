@@ -1,9 +1,11 @@
 # Raspberry Pi Video Swiss Army Knife
 
+My goal is to set up a single Raspberry Pi 4 to receive/play video out to HDMI from a variety of sources.
+
 ## Basic setup
 
-1. Use Raspberry Pi Imager to install Raspberry Pi OS (default) on a MicroSD card
-2. Insert the MicroSD card in to the Pi, and attach a keyboard/mouse (via USB) and a display (via HDMI using the Micro HDMI port next to the Micro USB power port). Power up the Pi using a high-quality power supply to the Micro USB power port.
+1. Use Raspberry Pi Imager to install Raspberry Pi OS (default) on a MicroSD card.
+2. Insert the MicroSD card into the Pi, and attach a keyboard/mouse (via USB) and a display (via HDMI using the Micro HDMI port closer to the Micro USB power port). Power up the Pi using a high-quality power supply to the Micro USB power port.
 3. As prompted by the GUI, set
   - location settings
   - password
@@ -22,6 +24,11 @@
   - Advanced Options A3 (Compositor): **No**
 8. Allow the Pi to reboot.
 
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You probably want to set up a static IP address using your router settings.
+
+Especially if you will be regularly accessing the Raspberry Pi remotely via ssh, you may want to set up [passwordless SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) on the Pi, and/or a `~/.ssh/config` file on the computer you will be using to access it.
+
+
 ## Stream receivers
 
 ### Aaron Parecki's PiBridge (RTMP receiver)
@@ -35,7 +42,7 @@ sudo apt install omxplayer nginx libnginx-mod-rtmp
 sudo usermod -aG video www-data
 ```
 
-Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can disable nginx's web server on port 80 so that other apps (e.g, Dicaffeine) can use port 80 instead.
+Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can change nginx's web server to a different port so that other apps (e.g, Dicaffeine) can use port 80 instead.
 
 To create an RTMP server in nginx, edit the main nginx config file:
 ```bash
@@ -74,7 +81,7 @@ and restart nginx using:
 sudo nginx -s reload
 ```
 
-Ensure you know your local IP address (which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://YOUR_IP_ADDRESS/live` with any stream key.
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://192.168.0.140/live` with any stream key. Access from outside your local network should require you to set up port forwarding on your router.
 
 Note that by default the cursor will show on top of streamed video. (This would not be true if you were using a terminal-only Pi as suggested in Aaron Parecki's original instructions.) We can hide the cursor when it's not moving using the `unclutter` package:
 ```bash
@@ -116,7 +123,7 @@ sudo apt update
 sudo apt install -y dicaffeine
 ```
 
-Ensure you know your local IP address (which you can check using `hostname -I`). Open dicaffeine at that IP, either using the Pi's web browser, or another computer on the local network that can access the Pi.
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). Open dicaffeine at that IP using either the Pi's web browser, or another computer on the local network that can access the Pi.
 
 The default password for Dicaffeine is `admin`; you can change this using the "System" tab at the top of the browser window.
 
@@ -136,11 +143,11 @@ We need to set a few Chromium flags to ensure the pi relies on hardware-accelera
 * `chrome://flags/#enable-accelerated-video-decode`
 * `chrome://flags/#enable-gpu-rasterization`
 
-Restart the browser. You can check hardware acceleration status by browsing to `chrome://gpu`
+Restart the browser. You can check hardware acceleration status by browsing to `chrome://gpu`, although some sources suggest that Chromium may falsely claim to be using hardware acceleration.
 
 As a simple example, direct guests to join an OBSN room at e.g., <https://obs.ninja/?room=ROOMNAME&pw=ROOMPASSWORD> or obfuscate the password using <https://invite.cam>. You can control this "room" (including sending audio/video to your guest that will not be captured by the Pi) at <https://obs.ninja/?director=ROOMNAME&pw=ROOMPASSWORD>.
 
-Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen OBS viewer remotely via SSH using e.g.,
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You can now open a fullscreen OBS viewer remotely via SSH using e.g.,
 ```bash
 ssh pi@192.168.0.140 "chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required \"https://obs.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720\""
 ```
@@ -154,29 +161,33 @@ ssh pi@192.168.0.140 "pkill -o chromium"
 
 ### VLC
 
-VLC is installed by default, but you can confirm by running:
+VLC should already be installed by default, but you can confirm by running:
 ```bash
 sudo apt install vlc
 ```
 
-Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen VLC player remotely via SSH using e.g.,
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You can now open a fullscreen VLC player remotely via SSH using e.g.,
 ```bash
 ssh pi@192.168.0.140 "cvlc --one-instance -I http --http-port 8080 --http-password testpassword --no-xlib --aout=alsa --no-video-title --repeat /opt/vc/src/hello_pi/hello_video/test.h264"
 ```
 
-You can close this player remotely via SSH using e.g.,
+The `one-instance` flag helps ensure that any subsequent commands run in the same VLC instance. [https://wiki.videolan.org/VLC_command-line_help](Many command line flags) are available.
+
+
+You can close this player by asking it to "play" `vlc://quit`, or remotely via SSH using e.g.,
 ```bash
 ssh pi@192.168.0.140 "cvlc --one-instance --no-xlib --aout=adummy vlc://quit"
 ```
 
+
 ### omxplayer
 
-omxplayer is installed by default, but you can confirm by running:
+omxplayer should already be installed by default, but you can confirm by running:
 ```bash
 sudo apt install omxplayer
 ```
 
-Ensure you know your local IP address (which you can check using `hostname -I`). You can now open a fullscreen omxplayer player remotely via SSH using e.g.,
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You can now open a fullscreen omxplayer player remotely via SSH using e.g.,
 ```bash
 ssh pi@192.168.0.140 "omxplayer --loop /home/pi/media/fallingstars_1080p.mp4"
 ```
