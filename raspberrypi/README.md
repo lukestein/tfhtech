@@ -79,6 +79,8 @@ rtmp {
 }
 ```
 
+If you prefer, you can set up a restreamer rather than a player by replacing the `exec omxplayer` line with one or more lines containing e.g., `push rtmp://a.rtmp.youtube.com/live2/xxxx-xxxx-xxxx-xxxx-xxxx;`
+
 Test the config using:
 ```bash
 sudo nginx -t
