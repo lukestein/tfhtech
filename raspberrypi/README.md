@@ -26,7 +26,7 @@ My goal is to set up a single Raspberry Pi 4 to receive/play video out to HDMI f
 
 Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You probably want to set up a static IP address using your router settings.
 
-Especially if you will be regularly accessing the Raspberry Pi remotely via ssh, you may want to set up [passwordless SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) on the Pi, and/or a `~/.ssh/config` file on the computer you will be using to access it.
+Especially if you will be regularly accessing the Raspberry Pi remotely via ssh, you may want to set up [passwordless SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) on the Pi, and/or a [`~/.ssh/config` file](https://linuxize.com/post/using-the-ssh-config-file/) on the computer you will be using to access it.
 
 
 ## Stream receivers
