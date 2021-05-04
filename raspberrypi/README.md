@@ -44,7 +44,7 @@ sudo usermod -aG video www-data
 
 Note that nginx will fail to set up if a previously-installed app already controls port 80. However, once set up, we can change nginx's web server to a different port so that other apps (e.g, Dicaffeine) can use port 80 instead.
 
-To create an RTMP server in nginx, edit the main nginx config file:
+To create an RTMP server in nginx, edit the main nginx config file `/etc/nginx/nginx.conf` using e.g.,
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
