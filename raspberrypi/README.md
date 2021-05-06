@@ -208,16 +208,22 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 
 
 
-## Other utilities
-
-### clock-8001
-
-[Homepage](https://gitlab.com/Depili/clock-8001)
-
-*To be added*
 
 ## Bitfocus Companion control
 
 [Homepage](https://bitfocus.io/companion)
 
 *To be added*
+
+
+## Other tools
+
+- [MP4Museum](http://mp4museum.org) (Simple Pi-based video looper/player)
+- [rpi-clone](https://github.com/billw2/rpi-clone) (Pi SD card backup)
+- [clock-8001](https://gitlab.com/Depili/clock-8001) (full-screen clock/timer with Companion control)
+- [Homebridge](https://homebridge.io) (smarthome control)
+- [Pi-hole](https://pi-hole.net) (ad-blocking DNS)
+- Pi-based [AirPrint server](https://pimylifeup.com/raspberry-pi-airprint/) for wireless printing from iOS devices
+- [CAPTION.ninja](https://github.com/steveseguin/captionninja) (automatic real-time captioning)
+- [Raspberry Ninja](https://github.com/steveseguin/raspberry_ninja) (obs.ninja streaming from a Pi)
+- [Vingester](https://github.com/rse/vingester) ("run multiple Chromium-based Web browser instances and ingest their rendered Web Contents as screen/window-captured or NDI-multicasted or FFmpeg-based video streams")
