@@ -1,6 +1,6 @@
 # Raspberry Pi Video Swiss Army Knife
 
-My goal is to set up a single Raspberry Pi 4 to receive/play video out to HDMI from a variety of sources.
+My goal was to set up a single Raspberry Pi 4 to receive/play video out to HDMI from a variety of sources. I'm drawing on a number of online tutorials, and even what works now may not continue to work in the future.
 
 ## Basic setup
 
@@ -90,7 +90,7 @@ and restart nginx using:
 sudo nginx -s reload
 ```
 
-Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://192.168.0.140/live` with any stream key. Access from outside your local network should require you to set up port forwarding on your router.
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You should then be able to use the RTMP URL `rtmp://192.168.0.140/live` with any stream key. Access from outside your local network should require you to set up port forwarding on your router, with **potentially serious security implications**; at a minimum, you may want to change nginx to use a non-standard port, and change the application name to a long string other than "live."
 
 Note that by default the cursor will show on top of streamed video. (This would not be true if you were using a terminal-only Pi as suggested in Aaron Parecki's original instructions.) We can hide the cursor when it's not moving using the `unclutter` package:
 ```bash
