@@ -209,11 +209,29 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 
 
 
-## Bitfocus Companion control
+## Bitfocus Companion
+
+### Control
 
 [Homepage](https://bitfocus.io/companion)
 
 *To be added*
+
+### Running on the Raspberry Pi
+
+*To be added*
+
+- [Installation](https://github.com/bitfocus/companion/wiki/Manual-Install-on-Raspberry-Pi)
+- [Auto-start](https://github.com/bitfocus/companion/wiki/Auto-Start-Companion-on-Linux-Using-systemd)
+- Per [these instructions](https://github.com/bitfocus/companion/wiki/Updating-Companion-on-your-Raspberry-Pi),
+```bash
+cd ~/companion
+git pull
+yarn update
+sudo reboot
+```
+
+
 
 
 ## Other tools
