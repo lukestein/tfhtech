@@ -223,7 +223,7 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 
 - [Installation](https://github.com/bitfocus/companion/wiki/Manual-Install-on-Raspberry-Pi)
 - [Auto-start](https://github.com/bitfocus/companion/wiki/Auto-Start-Companion-on-Linux-Using-systemd)
-- Per [these instructions](https://github.com/bitfocus/companion/wiki/Updating-Companion-on-your-Raspberry-Pi),
+- Per [these instructions](https://github.com/bitfocus/companion/wiki/Updating-Companion-on-your-Raspberry-Pi):
 ```bash
 cd ~/companion
 git pull
