@@ -26,6 +26,8 @@ Implications for meeting, streaming, recording; bandwidth, latency
 
 # Basics
 
+Per Alex Lindsay: Focus on internet, then audio, then lighting, then camera, then background
+
 ## Software
 
 ## Microphones
