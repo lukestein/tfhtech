@@ -207,6 +207,22 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 ```
 
 
+## Still image players
+
+### fbi
+
+*Incomplete*
+
+fbi is not installed by default, so run:
+```bash
+sudo apt install fbi
+```
+
+Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You can now output an image remotely via SSH using e.g.,
+```bash
+ssh pi@192.168.0.140 "sudo fbi -vt 1 -noverbose /home/pi/bars.png"
+```
+
 
 
 ## Bitfocus Companion
@@ -219,7 +235,7 @@ ssh pi@192.168.0.140 "pkill omxplayer"
 
 ### Running on the Raspberry Pi
 
-*To be added*
+*Incomplete*
 
 - [Installation](https://github.com/bitfocus/companion/wiki/Manual-Install-on-Raspberry-Pi)
 - [Auto-start](https://github.com/bitfocus/companion/wiki/Auto-Start-Companion-on-Linux-Using-systemd)
