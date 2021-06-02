@@ -4,7 +4,7 @@ My goal was to set up a single Raspberry Pi 4 to receive/play video out to HDMI 
 
 ## Basic setup
 
-1. Use Raspberry Pi Imager to install Raspberry Pi OS (default) on a MicroSD card.
+1. Use Raspberry Pi Imager to install Raspberry Pi OS (default) on a MicroSD card. You can avoid some work later by entering settings on Imager's "advanced options" page at Ctrl-Shift-X. 
 2. Insert the MicroSD card into the Pi, and attach a keyboard/mouse (via USB) and a display (using the Micro HDMI port closer to the Micro USB power port). Power up the Pi using a high-quality power supply to the Micro USB power port.
 3. As prompted by the GUI, set
   - location settings
