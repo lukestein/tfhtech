@@ -143,9 +143,9 @@ Exit the player by clicking "Stop" if controlling from a remote computer, or by 
 If you choose "Autorun after start" (and then save), the Pi will boot directly into a running Dicaffeine player rather than the desktop environment.
 
 
-### OBS Ninja
+### VDO.Ninja (formerlu OBS Ninja)
 
-[Homepage](https://obs.ninja)
+[Homepage](https://vdo.ninja)
 
 We need to set a few Chromium flags to ensure the Pi relies on hardware-accelerated decoding to the degree possible. Open the Chromium browser, and enable the following options:
 * `chrome://flags/#ignore-gpu-blocklist`
@@ -154,11 +154,11 @@ We need to set a few Chromium flags to ensure the Pi relies on hardware-accelera
 
 Restart the browser. You can check hardware acceleration status by browsing to `chrome://gpu`, although some sources suggest that Chromium may falsely claim to be using hardware acceleration.
 
-As a simple example, direct guests to join an OBSN room at e.g., <https://obs.ninja/?room=ROOMNAME&pw=ROOMPASSWORD> or obfuscate the password using <https://invite.cam>. You can control this "room" (including sending audio/video to your guest that will not be captured by the Pi) at <https://obs.ninja/?director=ROOMNAME&pw=ROOMPASSWORD>.
+As a simple example, direct guests to join an OBSN room at e.g., <https://vdo.ninja/?room=ROOMNAME&pw=ROOMPASSWORD> or obfuscate the password using <https://invite.cam>. You can control this "room" (including sending audio/video to your guest that will not be captured by the Pi) at <https://vdo.ninja/?director=ROOMNAME&pw=ROOMPASSWORD>.
 
 Ensure you know your local IP address (e.g., 192.168.0.140, which you can check using `hostname -I`). You can now open a fullscreen OBS viewer remotely via SSH using e.g.,
 ```bash
-ssh pi@192.168.0.140 "chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required \"https://obs.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720\""
+ssh pi@192.168.0.140 "chromium-browser --kiosk --display=:0 --autoplay-policy=no-user-gesture-required \"https://vdo.ninja/?scene=0&room=ROOMNAME&password=ROOMPASSWORD&codec=h264&nocursor&height=720\""
 ```
 
 You can close this browser window remotely via SSH using e.g.,
@@ -259,5 +259,5 @@ sudo reboot
 - [Pi-hole](https://pi-hole.net) (ad-blocking DNS)
 - Pi-based [AirPrint server](https://pimylifeup.com/raspberry-pi-airprint/) for wireless printing from iOS devices
 - [CAPTION.ninja](https://github.com/steveseguin/captionninja) (automatic real-time captioning)
-- [Raspberry Ninja](https://github.com/steveseguin/raspberry_ninja) (obs.ninja streaming from a Pi)
+- [Raspberry Ninja](https://github.com/steveseguin/raspberry_ninja) (VDO.ninja streaming from a Pi)
 - [Vingester](https://github.com/rse/vingester) ("run multiple Chromium-based Web browser instances and ingest their rendered Web Contents as screen/window-captured or NDI-multicasted or FFmpeg-based video streams")
