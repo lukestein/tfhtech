@@ -143,7 +143,7 @@ Exit the player by clicking "Stop" if controlling from a remote computer, or by 
 If you choose "Autorun after start" (and then save), the Pi will boot directly into a running Dicaffeine player rather than the desktop environment.
 
 
-### VDO.Ninja (formerlu OBS Ninja)
+### VDO.Ninja (formerly OBS Ninja)
 
 [Homepage](https://vdo.ninja)
 
